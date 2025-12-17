@@ -479,8 +479,11 @@ tool_names = [
 
                 #81
                 ["amass","AMass - Brutes Domain for Subdomains","amass",1]
+                #82
+                ["sqlmap","SQLmap - Basic SQLmap command ","sqlmap",1]
             ]
-
+            
+        
 
 # Command that is used to initiate the tool (with parameters and extra params)
 tool_cmd   = [
@@ -726,6 +729,8 @@ tool_cmd   = [
 
                 #81
                 ["amass enum -d ",""]
+                #82 
+                ["sqlmap -u http://"," --batch --banner --current-db --dbs --crawl=3 --level=3 --risk=5 x--random-agent --batch --forms --dump-all"]    
             ]
 
 
@@ -973,7 +978,8 @@ tool_resp   = [
 
                 #81
                 ["Found Subdomains with AMass","m",31]
-
+                #82 
+                ["SQL Injection vulnerability found with SQLmap","c",52]
 
 
             ]
@@ -1226,7 +1232,8 @@ tool_status = [
 
                 #81
                 ["No names were discovered",1,proc_med," < 15m","amass",["The system was unable to build the pool of resolvers"]]
-
+                #82
+                ["sqlmap identified the following injection point(s)",0,proc_high,"> 30m","sqlmap",["could not connect to the target URL","all tested parameters appear to be not injectable"]]
 
 
             ]
@@ -1339,7 +1346,7 @@ tools_fix = [
 
 # Tool Set
 tools_precheck = [
-                    ["wapiti"], ["whatweb"], ["nmap"], ["golismero"], ["host"], ["wget"], ["uniscan"], ["wafw00f"], ["dirb"], ["davtest"], ["theHarvester"], ["xsser"], ["dnsrecon"],["fierce"], ["dnswalk"], ["whois"], ["sslyze"], ["lbd"], ["golismero"], ["dnsenum"],["dmitry"], ["davtest"], ["nikto"], ["dnsmap"], ["amass"]
+                    ["wapiti"], ["whatweb"], ["nmap"], ["golismero"], ["host"], ["wget"], ["uniscan"], ["wafw00f"], ["dirb"], ["davtest"], ["theHarvester"], ["xsser"], ["dnsrecon"],["fierce"], ["dnswalk"], ["whois"], ["sslyze"], ["lbd"], ["golismero"], ["dnsenum"],["dmitry"], ["davtest"], ["nikto"], ["dnsmap"], ["amass"], ["sqlmap"]
                  ]
 
 def get_parser():
